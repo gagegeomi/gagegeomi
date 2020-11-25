@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src= "script.js"  async defer></script>
+    </head>
+    <body>
+        <div id="container">
+            <div id="nav-tab" onclick="openNav()">☰</div>
+            <div id="nav"> 
+                <a href="javascript:void(0)" class="closeBtn" onclick="openNav()">×</a>
+                <div id="nav-content">
+                    <a href="javascript:void(0)" id="expandBtn" onclick="expandNav(this.innerHTML)">expand</a> 
+                    <%- worksList %>
+                </div>            
+            </div>
+            <div id="content">
+                <div class="work_minimize"></div>  
+                <div class="work_data"> 
+                    <a href="javascript:void(0)" class="closebtn" onclick="toggleView()">×</a>
+                    <div id="work_title"></div>
+                    <div id="work_date"></div>
+                    <div id="work_content"></div>
+                </div>
+                <iframe id="worksFrame" src="https://drive.google.com/file/d/1ht0wzNhJDXO3fTNwKIU6R0ccMjBXxq_d/preview"> 
+            </div>
+        </div>
+    </body>
+</html>

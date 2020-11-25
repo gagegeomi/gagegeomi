@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1"/>
+    <script src="https://d3js.org/d3.v4.js"></script>
+  </head>
+
+  <body>
+
+      <script>
+        var svg = d3.select('body').append('svg')
+            .attr('width', window.innerWidth)
+            .attr('height', window.innerHeight)
+            .append('image')
+            .attr('xlink:href',  'http://localhost:8080/test.svg') //google drive 에서 svg 끌어오기
+            .call(d3.zoom().on('zoom', function () {
+              svg.attr('transform', d3.event.transform)
+            }))
+
+      </script>
+  </body>
+
+</html>
