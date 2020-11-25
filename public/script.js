@@ -37,7 +37,7 @@ function getWorkcontent(id){
 
       }
   };
-  xmlhttp.open("get", "http://gagegeomi.us-east-2.elasticbeanstalk.com/work/" + id, true);
+  xmlhttp.open("get", "https://gagegeomi.herokuapp.com/work/" + id, true);
   xmlhttp.send(null);
 
 }
