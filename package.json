@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gagegeomi/gagegeomi-heroku-.git"
+    "url": "git+https://github.com/gagegeomi/gagegeomi.git"
   },
   "keywords": [
     "gagegeomi"
