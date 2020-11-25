@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 3000;
 const tree = require('./lib/tree');
 const db = require('./lib/db');
 const allWorks = db.get('works').value();
