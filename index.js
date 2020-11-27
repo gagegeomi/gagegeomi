@@ -18,16 +18,16 @@ app.get('/', (req, res) => {
     })
 })
 
-// app.get('/svg', (req, res) => {
-//     res.render('svg')
-// })
+app.get('/svg', (req, res) => {
+    res.render('svg')
+})
 
-// app.get('/svg-test', (req, res) => {
-//     res.render('svg-test')
-// })
-// app.get('/svg-test2', (req, res) => {
-//     res.render('svg-test2')
-// })
+app.get('/svg-test', (req, res) => {
+    res.render('svg-test')
+})
+app.get('/svg-test2', (req, res) => {
+    res.render('svg-test2')
+})
 
 app.get('/work/:id', (req, res) => {
     res.send( db.get('works').find({ id:parseInt(req.params.id) }).value())
