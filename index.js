@@ -18,10 +18,6 @@ app.get('/', (req, res) => {
     })
 })
 
-app.get('/svg', (req, res) => {
-    res.render('svg')
-})
-
 app.get('/svg-test', (req, res) => {
     res.render('svg-test')
 })
