@@ -14,11 +14,15 @@ img.onload = function() {
   addCanvasEvent(canvas);
  } 
 
+function test(){
+    img.src = "test2.svg"
+}
+
 function trackTransforms(ctx) {
     var svg = document.createElementNS("http://www.w3.org/2000/svg",'svg');
     var xform = svg.createSVGMatrix();
-    ctx.getTransform = function(){ return xform; };
     var pt  = svg.createSVGPoint();
+    ctx.getTransform = function(){ return xform; };
     ctx.transformedPoint = function(x,y){
         pt.x=x; pt.y=y;
         return pt.matrixTransform(xform.inverse());
