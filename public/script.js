@@ -31,12 +31,12 @@ xhr.onreadystatechange = function () {
     if (status === 0 || (status >= 200 && status < 400)) {
       // The request has been completed successfully
       document.getElementsByClassName("work_data")[0].style.display = 'block';
-      var result = JSON.parse(this.responseText);
+      var result = JSON.parse(xhr.responseText);
       document.getElementById("work_title").innerHTML = result.title;
       document.getElementById("work_date").innerHTML = result.date;
       document.getElementById("work_content").innerHTML = result.content;
 
-      alert(xhr.responseText);
+      alert('ttt');
     } else {
       // Oh no! There has been an error with the request!
     }
