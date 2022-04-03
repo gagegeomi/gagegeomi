@@ -19,55 +19,28 @@ function onloadWorksUrl(id) {
 
 
 function getWorkcontent(id){
-const xhr = new XMLHttpRequest(),
-    method = "GET",
-    url = "https://gagegeomi.herokuapp.com/work/"+id;
 
-xhr.open(method, url, true);
-xhr.onreadystatechange = function () {
-  // In local files, status is 0 upon success in Mozilla Firefox
-  if(xhr.readyState === XMLHttpRequest.DONE) {
-    var status = xhr.status;
-    if (status === 0 || (status >= 200 && status < 400)) {
-      // The request has been completed successfully
-      document.getElementsByClassName("work_data")[0].style.display = 'block';
-      var result = JSON.parse(xhr.responseText);
-      document.getElementById("work_title").innerHTML = result.title;
-      document.getElementById("work_date").innerHTML = result.date;
-      document.getElementById("work_content").innerHTML = result.content;
-
-      alert('ttt');
-    } else {
-      // Oh no! There has been an error with the request!
-    }
+  var xmlhttp;
+  if (window.XMLHttpRequest) {
+      xmlhttp = new XMLHttpRequest();
+  } else {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
   }
-};
-xhr.send();
+
+  xmlhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        document.getElementsByClassName("work_data")[0].style.display = 'block';
+        var result = JSON.parse(this.responseText);
+        document.getElementById("work_title").innerHTML = result.title;
+        document.getElementById("work_date").innerHTML = result.date;
+        document.getElementById("work_content").innerHTML = result.content;
+
+      }
+  };
+  xmlhttp.open("get", "https://gagegeomi.herokuapp.com/work/" + id, true);
+  xmlhttp.send(null);
+
 }
-
-// function getWorkcontent(id){
-
-//   var xmlhttp;
-//   if (window.XMLHttpRequest) {
-//       xmlhttp = new XMLHttpRequest();
-//   } else {
-//       xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-//   }
-
-//   xmlhttp.onreadystatechange = function() {
-//       if (this.readyState == 4 && this.status == 200) {
-//         document.getElementsByClassName("work_data")[0].style.display = 'block';
-//         var result = JSON.parse(this.responseText);
-//         document.getElementById("work_title").innerHTML = result.title;
-//         document.getElementById("work_date").innerHTML = result.date;
-//         document.getElementById("work_content").innerHTML = result.content;
-
-//       }
-//   };
-//   xmlhttp.open("get", "https://gagegeomi.herokuapp.com/work/" + id, true);
-//   xmlhttp.send(null);
-
-// }
 
 function toggleView() {
   let view = document.getElementsByClassName("work_data")[0].style.display
