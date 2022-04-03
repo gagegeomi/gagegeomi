@@ -6,14 +6,14 @@
       "date": "2020-09-07",
       "title": "test_1",
       "content": "This is a test content.",
-      "url": "https://drive.google.com/file/d/1IAfHI7XdZ9xkLT5U1uF3gJLYEgop2w1Q/preview"
+      "url": ""
     },
     {
       "id": 2,
       "parentId": 1,
       "date": "2020-09-07",
       "title": "test_1-1",
-      "url": "https://drive.google.com/file/d/1HjCJ9UfYsMtHKY7oEIjLHqkJ4WTB_PkI/preview"
+      "url": "https://drive.google.com/file/d/1OaIWlHBCoBgaMpj6woBfpCAMKgW3FIbF/preview"
     },
     {
       "id": 3,
