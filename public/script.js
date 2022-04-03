@@ -31,6 +31,7 @@ function getWorkcontent(id){
       if (this.readyState == 4 && this.status == 200) {
         document.getElementsByClassName("work_data")[0].style.display = 'block';
         var result = JSON.parse(this.responseText);
+        alert(result)
         document.getElementById("work_title").innerHTML = result.title;
         document.getElementById("work_date").innerHTML = result.date;
         document.getElementById("work_content").innerHTML = result.content;
